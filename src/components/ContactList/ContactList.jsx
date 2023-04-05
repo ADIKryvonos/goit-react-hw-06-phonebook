@@ -7,9 +7,9 @@ import { deleteContact } from 'redux/contactSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getAllContact,
-  getFilteredContact,
   findFilteredContact,
-} from 'redux/contactSlice';
+  getFilteredContact,
+} from 'redux/selectors';
 
 export const ContactList = () => {
   const dispatch = useDispatch();

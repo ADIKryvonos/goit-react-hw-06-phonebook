@@ -7,7 +7,6 @@ const contactsInitialState = {
     { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
     { id: 'id-4', name: 'Annia Copeland', number: '227-91-26' },
   ],
-  filter: '',
 };
 
 const contactSlice = createSlice({
@@ -28,24 +27,9 @@ const contactSlice = createSlice({
         contact => contact.id !== action.payload
       );
     },
-    filterContacts(state, action) {
-      state.filter = action.payload;
-    },
   },
 });
 
-export const { addContact, deleteContact, filterContacts } =
-  contactSlice.actions;
+export const { addContact, deleteContact } = contactSlice.actions;
 export const contactReducer = contactSlice.reducer;
 export const getAllContact = state => state.contacts.contacts;
-export const getFilteredContact = state => state.contacts.filter;
-
-export const findFilteredContact = (contacts, filter) => {
-  if (filter) {
-    const name = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
-    return name;
-  }
-  return contacts;
-};
