@@ -32,4 +32,3 @@ const contactSlice = createSlice({
 
 export const { addContact, deleteContact } = contactSlice.actions;
 export const contactReducer = contactSlice.reducer;
-export const getAllContact = state => state.contacts.contacts;
